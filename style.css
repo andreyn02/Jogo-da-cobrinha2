@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #87CEEB, #FFFFFF); /* Céu gradiente */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#game {
+    text-align: center;
+    position: relative;
+}
+
+#score {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000; /* Cor do texto */
+}
+
+canvas {
+    border: 1px solid #000;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar o canvas */
+}
+
+/* Sol */
+#sun {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #FFD700;
+}
+
+/* Grama no fundo */
+body::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top, #32CD32, #228B22); /* Gradiente de grama */
+    z-index: -1;
+}
+
+/* Mensagem de vitória */
+#win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#win-message.visible {
+    display: block;
+}
